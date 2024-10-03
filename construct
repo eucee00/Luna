@@ -1,0 +1,195 @@
+Luna/
+├── main.py                         # Main entry point for orchestrating modes and tasks (upgraded)
+├── gui.py                          # GUI for user interaction (improved real-time interaction)
+├── readme.md                       # Project documentation (setup and usage)
+├── structure.md                    # Detailed architecture documentation (updated)
+├── requirements.txt                # Dependencies and package versions
+├── LICENSE                         # Open-source license for the project
+├── luna.py
+├── core/                           # Core functionalities (improved modularity and AI-driven actions)
+│   ├── actions/                    # Executes actions and interactions
+│   │   ├── __init__.py             # Marks the folder as a package
+│   │   ├── execute.py              # Action execution engine (central command router added)
+│   │   ├── music_control/          # Handles music and audio control
+│   │   │   ├── spotify_controller.py   # Controls Spotify streaming (cross-platform support added)
+│   │   │   ├── apple_music_controller.py # Controls Apple Music
+│   │   │   ├── playlist_manager.py  # Manages user playlists (recommendation algorithms added)
+│   │   │   └── audio_effects.py     # Applies audio effects and filters (AI-enhanced effects)
+│   │   ├── research_assistant/      # Research and information gathering
+│   │   │   ├── research_fetcher.py  # Fetches research data from the web (uses advanced NLP)
+│   │   │   ├── knowledge_graph.py   # Extracts structured data from knowledge graphs
+│   │   │   ├── citation_manager.py  # Manages research citations
+│   │   │   └── web_scraper.py       # Scrapes web pages for extra data (uses machine learning)
+│   │   ├── finance_manager/         # Manages financial and stock-related tasks
+│   │   │   ├── stock_price_fetcher.py  # Fetches stock prices (real-time API integration)
+│   │   │   ├── portfolio_manager.py    # Manages investment portfolios (portfolio optimization)
+│   │   │   ├── budget_tracker.py       # Tracks user budget and expenses
+│   │   │   └── financial_advisor.py    # AI-driven financial advice (machine learning predictions)
+│   │   ├── smart_home_control/      # Controls smart home devices and environments
+│   │   │   ├── smart_device_controller.py  # Smart device controller (device learning and feedback added)
+│   │   │   ├── energy_optimizer.py  # Optimizes energy use (AI-driven optimization)
+│   │   │   ├── security_system.py   # Home security management (uses motion and proximity monitoring)
+│   │   │   └── environment_monitor.py # Monitors air quality and environment
+│   │   ├── notifications/           # Manages notifications and alerts
+│   │   │   ├── reminder_manager.py  # Tracks reminders and to-do lists (time/context-aware)
+│   │   │   ├── notification_scheduler.py # Sends scheduled notifications (uses context-awareness)
+│   │   │   ├── alert_system.py      # Sends alerts for critical events
+│   │   │   └── daily_summary.py     # Sends daily summaries (contextual summaries based on past interactions)
+│   │   ├── connectivity/            # Handles connectivity and network issues
+│   │   │   ├── bluetooth_manager.py # Manages Bluetooth devices
+│   │   │   ├── wifi_connector.py    # Manages WiFi connections
+│   │   │   ├── vpn_manager.py       # VPN management for secure connections
+│   │   │   └── network_monitor.py   # Monitors network health
+│   │   ├── health_monitoring/       # Monitors user health using wearables
+│   │   │   ├── step_counter.py      # Tracks physical activity
+│   │   │   ├── heart_rate_monitor.py # Monitors heart rate (trend and anomaly detection added)
+│   │   │   ├── sleep_tracker.py     # Tracks sleep patterns (predictive analysis)
+│   │   │   └── health_report.py     # Generates user health reports
+│   │   ├── legal_advisor/           # Provides legal AI assistance
+│   │   │   ├── document_generator.py  # Generates legal documents
+│   │   │   └── case_manager.py      # Manages legal case information
+│   │   ├── team_collaboration/      # Collaboration and communication tools
+│   │   │   ├── shared_workspace.py  # Collaborative document management
+│   │   │   ├── communication_tool.py  # Enables chat and messaging
+│   │   │   └── task_manager.py      # Manages team tasks
+│   │   ├── caching/                 # Caching system for performance optimization
+│   │   │   ├── redis_cache.py       # Redis-based caching (supports large data caches)
+│   │   │   └── memory_cache.py      # In-memory caching solution
+
+├── brain/                          # Central processing unit of Luna (AGI and Cognitive features)
+│   ├── sensory_inputs/              # Processing sensory inputs (improved real-time processing)
+│   │   ├── visual/                  # Handles visual data (improved object detection and recognition)
+│   │   │   ├── object_detection.py       # Object detection (uses YOLO or EfficientDet)
+│   │   │   ├── gesture_recognition.py   # Detects gestures (improved real-time gesture detection)
+│   │   │   ├── facial_recognition.py    # Facial recognition for users (multi-person tracking added)
+│   │   │   ├── emotion_detection.py     # Detects emotions from facial expressions
+│   │   │   ├── light_monitoring.py      # Monitors environmental light
+│   │   │   ├── body_language_analysis.py# Body language analysis (enhanced context-awareness)
+│   │   │   ├── image_enhancement.py     # Enhances images for better recognition
+│   │   │   └── visual_search.py         # Searches for objects in visual inputs
+│   │   ├── auditory/              # Audio processing modules (VAD and emotion analysis improved)
+│   │   │   ├── wake_word_detector.py   # Detects wake words (enhanced with machine learning)
+│   │   │   ├── vad.py                  # Voice Activity Detection (real-time)
+│   │   │   ├── sound_analysis.py        # Analyzes environmental sounds
+│   │   │   ├── voice_profile_recognition.py # Identifies users by voice (improved accuracy)
+│   │   │   ├── noise_filter.py         # Pre-processes audio, reduces noise (AI-driven noise reduction)
+│   │   │   ├── audio_emotion_recognition.py # Recognizes emotions from audio (context-aware)
+│   │   │   ├── audio_event_recognition.py  # Recognizes events from audio
+│   │   │   ├── audio_object_recognition.py # Recognizes objects from audio
+│   │   │   ├── audio_intent_recognition.py # Recognizes user intent from audio (improved NLP integration)
+│   │   │   └── audio_context_recognition.py # Recognizes context from audio (dynamic context understanding)
+│   │   ├── somatosensory/          # Processes touch and environmental sensors
+│   │   │   ├── touch_detection.py   # Processes tactile input
+│   │   │   ├── temperature_monitoring.py    # Monitors environmental temperature
+│   │   │   ├── humidity_monitoring.py       # Monitors environmental humidity
+│   │   │   ├── proximity_monitoring.py      # Monitors proximity to objects
+│   │   │   ├── motion_monitoring.py         # Monitors motion and movement
+│   │   │   ├── pressure_monitoring.py       # Monitors pressure and weight
+│   │   │   ├── vibration_monitoring.py      # Monitors vibrations
+│   │   │   ├── acceleration_monitoring.py   # Monitors acceleration
+│   │   │   └── orientation_monitoring.py    # Monitors orientation (improved integration for robotics)
+│   │   └── olfactory/              # (Optional) Processes chemical input
+│   │       └── scent_detection.py  # Scent detection sensors
+
+│   ├── cognition/                  # Advanced reasoning and decision-making modules (improved intelligence)
+│   │   ├── memory/                 # Memory management and learning (short-term, long-term, and episodic memory)
+│   │       ├── memory_store.py      # Manages long-term and short-term memory (episodic memory added)
+│   │   │   ├── learning_module.py   # Learning and machine learning algorithms (improved meta-learning)
+│   │   │   ├── experience_manager.py# Stores learned experiences
+│   │   │   ├── memory_retrieval.py  # Retrieves memories based on context
+│   │   │   └── memory_enhancement.py# Enhances memory retention strategies
+│   │   ├── reasoning/              # Logical reasoning and decision-making
+│   │   │   ├── decision_making.py  # Core decision-making logic (improved outcome analysis)
+│   │   │   ├── scenario_analysis.py # Analyzes different scenarios for outcomes
+│   │   │   └── ethical_decision_maker.py # Ethical considerations in decisions (added ethical reasoning engine)
+│   │   ├── emotional_intelligence/  # Emotional analysis and empathy (AI-enhanced)
+│   │   │   ├── emotion_processing.py# Analyzes emotional input
+│   │   │   ├── mood_assessment.py   # Tracks user mood through interactions
+│   │   │   ├── empathy_module.py    # Enhances empathetic responses to users
+│   │   │   └── emotional_history.py # Tracks historical emotional states
+│   │   ├── respond/
+│   │   │   ├── intro.py            #this scripts  introduces new users, get information about them and store it
+│   │   │   ├── salutations.py      #this script handles greetings
+│   ├── learning/                   # Continuous learning and adaptability (improved learning algorithms)
+│   │   ├── self_learning/           # Self-learning and adaptation
+│   │   │   ├── reinforcement_learning.py # Reinforcement learning algorithms
+│   │   │   ├── retraining_module.py   # Retrains models with new data
+│   │   │   ├── data_scraper.py       # Gathers new data for learning
+│   │   │   └── active_learning_manager.py  # Learns from feedback and trial/error
+│   │   ├── meta_learning/          # Meta-learning strategies (improved generalization)
+│   │   │  ├── model_selection.py   # Selects the best model for tasks
+│   │   │  ├── hyperparameter_optimizer.py # Optimizes model performance
+│   │   │  ├── few_shot_learning.py    # Adapts to new information with minimal data
+│   │   │  └── transfer_learning.py # Knowledge transfer across tasks
+│   │   ├── lifelong_learning/      # Modules for continuous learning and adaptation
+│   │   │   ├── generalized_learning.py  # General task learning across multiple domains
+│   │   │   ├── transfer_learning.py # Transfers knowledge between tasks
+│   │   │   ├── self_supervised_learning.py # Learning from unlabelled real-world data
+│   │   │   └── meta_learning.py     # Improves learning algorithm
+│   ├── agi_processing/             # AGI capabilities and modules (integrated AGI tasks)
+│   │   ├── nlp_module.py           # Natural Language Processing (NLP) (improved with BERT, GPT models)
+│   │   ├── nlg_module.py           # Natural Language Generation (NLG) (advanced generation)
+│   │   ├── knowledge_graph_module.py# Advanced knowledge graph reasoning
+│   │   ├── ethical_engine.py       # Advanced ethical reasoning and decisions (AI-based)
+
+├── robotics/                       # Robotics and hardware interaction
+│   ├── motor_control.py            # Controls motor functions for robotics (improved precision)
+│   ├── autonomous_navigation.py    # Manages autonomous navigation (real-time obstacle avoidance)
+│   ├── physical_adaptation.py      # Adaptation to physical environment
+│   ├── ar_integration.py
+│   ├── raspberry_integration.py
+│   ├── environment_sensors.py
+│   └── arduino_integration.py      # Integration with Arduino hardware
+
+├── governance/                     # Ethics, privacy, and security governance
+│   ├── ethical_governance/         # Ethical AI usage rules (improved ethical framework)
+│   │   ├── sentient_rights_manager.py # Manages AI ethical compliance
+│   │   └── self_preservation.py    # System integrity and self-maintenance
+│   └── security/                   # Security-related modules
+│       ├── quantum_encryption.py      # Quantum-safe encryption algorithms
+│       ├── data_sovereignty_manager.py # Manages data privacy (differential privacy added)
+│       ├── threat_detection.py        # Detects and mitigates security threats
+│       └── parental_controls.py       # Parental controls for family use
+
+├── sensors/                        # Handles sensory inputs and outputs (multi-sensory integration)
+│   ├── lvs.py                  # Luna Voice System (speech synthesis improved)
+│   ├── ears/                       # Audio input/output
+│   │   └── microphone.py            # Captures audio input (VAD, noise reduction enhanced)
+│   ├── mouth/                      # Voice output
+│   │   ├── multi_language_support.py # Multi-language speech synthesis
+│   └── eyes/                       # Visual input and processing
+│       └── camera_input.py         # Camera input processing (real-time visual processing)
+
+├── config/                         # Configuration files and profiles (improved modularity)
+│   ├── config.json                 # Global config file
+│   ├── config.py
+│   ├── device_sync_manager.py
+│   ├── react_keys.json
+│   ├── device_profiles.json
+│   ├── salutations.json
+│   ├── intro.json
+│   ├── intents.json                # Mapping of user intents for NLP (improved intent mapping)
+│   ├── user_profiles/              # Stores user-specific profiles
+│   │   └── user_<id>.json          # Individual user data and history
+│   ├── device_profiles.json        # Smart device profiles (improved for multi-device environments)
+│   ├── service_keys.json           # API keys (Spotify, Google, etc.)
+│   └── device_sync_manager.py      # Syncs data across devices
+│   ├── voice_profiles/
+└── utils/                          # Utility functions
+    ├── logger.py                   # Centralized logging system (improved logging granularity)
+    ├── common_logger.py
+    ├── api_clients/                # External API clients
+    │   ├── google_api_client.py    # Google API integration
+    │   ├── coin_gecko_client.py
+    │   ├── news_api_client.py
+    │   ├── weather_api_client        
+    │   └── spotify_api_client.py   # Spotify API integration
+    ├── data_cleaner.py             # Cleans and preprocesses input data (for better AI decisions)
+    ├── file_manager.py             # File handling utilities
+    ├── notification_dispatcher.py  # Sends notifications to users (integrated with notification manager)
+    ├── async_task_manager.py       # Asynchronous task management for scaling (multi-threading optimized)
+
+├── tests/                          # Testing modules for continuous integration (improved testing coverage)
+│   ├── unit_tests/                 # Unit tests for individual components
+│   ├── integration_tests/          # Tests for component integration
+│   └── performance_tests/          # Performance and load testing
